@@ -1,0 +1,1 @@
+web: gunicorn travelr_backend.wsgi
