@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-dh4!#d&l@i+ak-p))0op9kvhfi(g_h&&7w^8$fe9goifa2n89j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'travlr-backend.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'travelr-backend.herokuapp.com']
 
 
 # Application definition
