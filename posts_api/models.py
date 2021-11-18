@@ -8,3 +8,4 @@ class Post(models.Model):
      public = models.BooleanField()
      description = models.CharField(max_length=200)
      location = models.CharField(max_length=128)
+     user = models.CharField(max_length=32)
