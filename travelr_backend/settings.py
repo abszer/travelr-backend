@@ -24,14 +24,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-dh4!#d&l@i+ak-p))0op9kvhfi(g_h&&7w^8$fe9goifa2n89j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+## Changed to false
+DEBUG = True 
 
 ALLOWED_HOSTS = ['localhost', 'travelr-backend.herokuapp.com']
 
 
 # Application definition
-
+## added auth_api, bcrypt
 INSTALLED_APPS = [
+    'bcrypt',
+    'auth_api',
     'corsheaders',
     'rest_framework',
     'posts_api',
@@ -93,6 +96,16 @@ DATABASES = {
 }
 db_from_env = dj_database_url.config(conn_max_age=600) # add this
 DATABASES['default'].update(db_from_env) # add this
+
+
+### Added Bcrypt password Hashers
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
